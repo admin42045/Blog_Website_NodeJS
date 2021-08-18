@@ -1,0 +1,6 @@
+#.gitignore  ignore the fils which is which is create by npm
+/node_modules
+
+# ignore the DS_Store file? It stands for Desktop Services Store and it holds meta
+# information about your folder's thumbnails, settings, etc. ... DS_Store files are created any time you navigate to a file or folder from the Finder on a Mac.
+.DS_Store
