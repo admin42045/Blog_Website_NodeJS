@@ -1,0 +1,23 @@
+
+# mongoDB atls
+1 ) login
+2 ) create a new project 
+3 ) build Database and select free option
+4 ) select a shared cluster and down side put it name
+5 ) Click Database access then put username and password here
+6 ) Click on Network access then click anywhere the acess the network
+7 ) Click on the connect and copy the string here
+8 ) Click the browser collections and create the Database and provide the database name and collections name
+9 ) Click on the insert document
+
+
+# Connect to the mongoDB
+npm install mongoose 
+
+const mongoose = require('mongoose')
+
+
+mongoose.connect(connectString). then(() => console.log(Connected to the DB....)).catch((err))
+
+
+require("/db/connect");

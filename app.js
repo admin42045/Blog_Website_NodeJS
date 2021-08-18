@@ -1,3 +1,4 @@
+require("./db/connect");
 // createing first server
 const express = require("express");
 
