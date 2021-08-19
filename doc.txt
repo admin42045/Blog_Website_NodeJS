@@ -11,13 +11,45 @@
 9 ) Click on the insert document
 
 
-# Connect to the mongoDB
+# Mongoose , we need a library.
 npm install mongoose 
+
+# Connecting to MongoDB from Node
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my_database', {userNewUrlParser: true})
+
+or
 
 const mongoose = require('mongoose')
 
-
 mongoose.connect(connectString). then(() => console.log(Connected to the DB....)).catch((err))
 
-
 require("/db/connect");
+
+
+
+
+# Defining the Model
+// create a directiry models inside make a file eg.BlogPost.js
+
+const mongoose = require('mongoose')
+const Schema = monogoose.Schema;
+
+const BlogPostSchema = new Schema({
+    title: String,
+    body: String
+});
+
+######################################################################
+
+npm install body-parser
+
+
+######################################################################
+
+Keep in mind, at saving the data into database follow some tips
+-> into the form *action and *method names 
+-> and at the calling time , method should be passing same name parameters
+-> and last redirect, where do you want
+  
+
