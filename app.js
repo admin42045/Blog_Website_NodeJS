@@ -2,6 +2,8 @@ require("./db/connect");
 //require("./test");
 const BlogPost = require("./models/BlogPost");
 
+// file upload
+const fileUpload = require("express-fileupload");
 //const TestPost = require("./test");
 // createing first server
 const express = require("express");
@@ -17,6 +19,8 @@ const port = process.env.PORT || 5050;
 
 // static file access
 app.use(express.static("public"));
+//forhandle file uplod
+app.use(fileUpload);
 
 // routing for / home page
 app.get("/", (req, res) => {
@@ -47,6 +51,10 @@ app.get("/create", (req, res) => {
 
 app.post("/posts/store", (req, res) => {
   // models create a new doc with browser data
+  const image = req.files.image;
+  image.mv(path.resolve(__dirname, "public/img", image.name));
+  console.log(image);
+
   BlogPost.create(req.body, (error) => {
     if (error) {
       console.log(`error something is wrong.......`);

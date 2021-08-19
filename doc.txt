@@ -53,3 +53,6 @@ Keep in mind, at saving the data into database follow some tips
 -> and last redirect, where do you want
   
 
+# for file upload or image
+npm install --save express-fileupload
+

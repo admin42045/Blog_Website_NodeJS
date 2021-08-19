@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const BlogPostSchema = new Schema({
   title: String,
   body: String,
+  image: String,
 });
 
 // we access the database via monogoose.model
