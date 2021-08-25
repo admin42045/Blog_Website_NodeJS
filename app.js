@@ -61,14 +61,17 @@ app.get("/create", (req, res) => {
 //   });
 // });
 app.post("/posts/store", (req, res) => {
-  console.log("come in post-store...........");
-  console.log("image req.files:>>>", req.files);
+  // console.log("come in post-store...........");
+  // console.log("image req.files:>>>", req.files);
   let image = req.files.image;
-  console.log("image:>>>", image);
-  image.mv(path.resolve(__dirname, "public/img", image.name), (error) => {
-    BlogPost.create(req.body);
-    res.redirect("/");
-  });
+  // console.log("image:>>>", image);
+  image.mv(
+    path.resolve(__dirname, "public/upload/img", image.name),
+    (error) => {
+      BlogPost.create(req.body);
+      res.redirect("/");
+    }
+  );
 });
 
 // require the models where we define the BlogPost.js file in this file create a script and also set the table name
